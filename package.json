@@ -1,0 +1,93 @@
+{
+  "name": "clean_architecture",
+  "displayName": "clean_architecture_clean_architecture",
+  "description": "create folders and files for clean architecture Flutter",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:clean_architecture.createScreen",
+    "onCommand:clean_architecture.createUseCase",
+    "onCommand:clean_architecture.createRepo",
+    "onCommand:clean_architecture.createRepoImpl",
+    "onCommand:clean_architecture.createRepoImplList",
+    "onCommand:clean_architecture.createAll"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "clean_architecture.createScreen",
+      "title": "screen"
+    },
+    {
+      "command": "clean_architecture.createUseCase",
+      "title": "useCase"
+    },
+    {
+      "command": "clean_architecture.createRepo",
+      "title": "repo"
+    },
+    {
+      "command": "clean_architecture.createRepoImpl",
+      "title": "repo_impl"
+    },
+    {
+      "command": "clean_architecture.createRepoImplList",
+      "title": "repo_impl_list"
+    },
+    {
+      "command": "clean_architecture.createAll",
+      "title": "create_all"
+    }
+  
+  ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "clean_architecture.createScreen",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "clean_architecture.createUseCase",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "clean_architecture.createRepo",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "clean_architecture.createRepoImpl",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "clean_architecture.createRepoImplList",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "clean_architecture.createAll",
+          "when": "explorerResourceIsFolder"
+        }
+      ]
+  }
+},
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "@types/glob": "^8.0.1",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "eslint": "^8.33.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.4",
+    "@vscode/test-electron": "^2.2.2"
+  }
+}
